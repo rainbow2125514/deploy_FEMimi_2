@@ -1,0 +1,37 @@
+/* Container của slideshow */
+.Slideshow {
+  width: 100%;
+  position: relative;
+  z-index: 200px;
+  padding-bottom: 40px;
+}
+
+/* Swiper chính */
+.mySwiper {
+  width: 100%;
+  height: auto;
+}
+
+/* Slide image giữ đúng tỉ lệ ảnh gốc */
+.slideImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Đảm bảo ảnh không bị co méo */
+.slideImage img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.featuresContainer {
+  padding: 0 20px;
+}
+.featuresContainer img{
+   max-width: 100px;
+}
