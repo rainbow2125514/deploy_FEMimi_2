@@ -25,7 +25,7 @@ export default function InstagramSection() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/api/posts/by-category-slug/chuyen-nha-gau', { cache: 'no-store' });
+        const res = await fetch('https://deploy-nodejs-vqqq.onrender.com/api/posts/by-category-slug/chuyen-nha-gau', { cache: 'no-store' });
         if (!res.ok) throw new Error('Không thể tải bài viết');
 
         const data = await res.json();
@@ -80,7 +80,7 @@ export default function InstagramSection() {
             {latestPost && (
               <a href={`/posts/detail/${latestPost.slug}`}>
                 <img
-                  src={`https://deploy-nodejs-4u6l.onrender.com/images/${latestPost.img || 'default.jpg'}`}
+                  src={`https://deploy-nodejs-vqqq.onrender.com/images/${latestPost.img || 'default.jpg'}`}
                   alt={latestPost.title}
                   className={styles["instagram-bigimg"]}
                 />
@@ -92,7 +92,7 @@ export default function InstagramSection() {
               {otherPosts.map((post) => (
                 <a key={post._id} href={`/posts/detail/${post.slug}`}>
                   <img
-                    src={`https://deploy-nodejs-4u6l.onrender.com/images/${post.img || 'default.jpg'}`}
+                    src={`https://deploy-nodejs-vqqq.onrender.com/images/${post.img || 'default.jpg'}`}
                     alt={post.title}
                   />
                 </a>

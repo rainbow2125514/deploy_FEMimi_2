@@ -1,6 +1,6 @@
 import { Voucher } from "../types/voucherD";
 
-const API_URL = "https://deploy-nodejs-4u6l.onrender.com/vouchers";
+const API_URL = "https://deploy-nodejs-vqqq.onrender.com/vouchers";
 
 // Lấy toàn bộ Voucher (GET /vouchers)
 export const getVouchers = async (): Promise<Voucher[]> => {

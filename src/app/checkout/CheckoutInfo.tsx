@@ -119,7 +119,7 @@ const CheckoutInfo: React.FC<Props> = ({
         {!isLoggedIn && (
           <div className="log-dn">
             <a href="#" tabIndex={-1}>
-              <img src="https://deploy-nodejs-4u6l.onrender.com/images/icon-dn.png" alt="" />
+              <img src="https://deploy-nodejs-vqqq.onrender.com/images/icon-dn.png" alt="" />
             </a>
             <button type="button" onClick={handleLoginRedirect}>
               Đăng nhập

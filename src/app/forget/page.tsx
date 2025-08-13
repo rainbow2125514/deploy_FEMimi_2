@@ -27,7 +27,7 @@ export default function Forget() {
     validateField("email", email);
     if (errors.email) return;
 
-    const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/users/forgot-password", {
+    const res = await fetch("https://deploy-nodejs-vqqq.onrender.com/users/forgot-password", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

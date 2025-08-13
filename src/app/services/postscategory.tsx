@@ -9,7 +9,7 @@ interface RawPostCategory {
 
 export const getPostCategories = async (): Promise<PostCategory[]> => {
   try {
-    const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/api/postscategories');
+    const res = await fetch('https://deploy-nodejs-vqqq.onrender.com/api/postscategories');
     if (!res.ok) {
       throw new Error('Lỗi khi fetch danh mục bài viết');
     }

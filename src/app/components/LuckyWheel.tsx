@@ -69,8 +69,8 @@ const CENTER_BTN_SIZE = isMobile ? 54 : isTablet ? 80 : 100;
   
 useEffect(() => {
     Promise.all([
-      fetch("https://deploy-nodejs-4u6l.onrender.com/products").then(res => res.json()),
-      fetch("https://deploy-nodejs-4u6l.onrender.com/vouchers").then(res => res.json())
+      fetch("https://deploy-nodejs-vqqq.onrender.com/products").then(res => res.json()),
+      fetch("https://deploy-nodejs-vqqq.onrender.com/vouchers").then(res => res.json())
     ]).then(([products, vouchers]: [Product[], Voucher[]]) => {
       const now = new Date();
 
@@ -208,7 +208,7 @@ useEffect(() => {
 
   // Gửi mail khi trúng voucher
   const sendVoucherMail = async (email: string, voucher: any) => {
-    await fetch("https://deploy-nodejs-4u6l.onrender.com/users/send-voucher-mail", {
+    await fetch("https://deploy-nodejs-vqqq.onrender.com/users/send-voucher-mail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

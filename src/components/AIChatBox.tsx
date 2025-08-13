@@ -124,7 +124,7 @@ export default function AIChatBox() {
 
   // Lấy danh mục từ backend
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/categories")
+    fetch("https://deploy-nodejs-vqqq.onrender.com/categories")
       .then(res => res.json())
       .then(data => {
         // data là mảng object, lọc danh mục không ẩn

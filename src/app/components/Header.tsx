@@ -239,7 +239,7 @@ const cartCount = useAppSelector((state) => state.cart.items.length);
         <div className={styles["header-row"]}>
           <div className={styles["logo-wrap"]}>
             <a href="/">
-              <img src="https://deploy-nodejs-4u6l.onrender.com/images/logoXP.png" alt="Mimi Bear Logo" />
+              <img src="https://deploy-nodejs-vqqq.onrender.com/images/logoXP.png" alt="Mimi Bear Logo" />
             </a>
             <div className={styles.slogan}>“Hug MimiBear-Unbox Love”</div>
           </div>
@@ -273,7 +273,7 @@ const cartCount = useAppSelector((state) => state.cart.items.length);
                      onMouseDown={() => handleSuggestionClick(prod._id)}
                     >
                       <img
-                        src={`https://deploy-nodejs-4u6l.onrender.com/images/${prod.images[0]}`}
+                        src={`https://deploy-nodejs-vqqq.onrender.com/images/${prod.images[0]}`}
                         alt={prod.name}
                         className={styles.suggestionImg}
                       />
@@ -530,7 +530,7 @@ const cartCount = useAppSelector((state) => state.cart.items.length);
                     onClick={() => handleSuggestionClick(prod._id)}
                   >
                     <img
-                      src={`https://deploy-nodejs-4u6l.onrender.com/images/${prod.images[0]}`}
+                      src={`https://deploy-nodejs-vqqq.onrender.com/images/${prod.images[0]}`}
                       alt={prod.name}
                       className={styles.suggestionImg}
                     />

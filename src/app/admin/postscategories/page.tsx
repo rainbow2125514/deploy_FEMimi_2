@@ -22,7 +22,7 @@ export default function PostCategoriesPage() {
 
   const fetchCategories = async () => {
     try {
-      const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/api/postscategories');
+      const res = await fetch('https://deploy-nodejs-vqqq.onrender.com/api/postscategories');
       const data = await res.json();
       setCategories(data);
     } catch (err) {
@@ -40,8 +40,8 @@ export default function PostCategoriesPage() {
 
     const method = editingId ? 'PUT' : 'POST';
     const url = editingId
-      ? `https://deploy-nodejs-4u6l.onrender.com/api/postscategories/${editingId}`
-      : 'https://deploy-nodejs-4u6l.onrender.com/api/postscategories';
+      ? `https://deploy-nodejs-vqqq.onrender.com/api/postscategories/${editingId}`
+      : 'https://deploy-nodejs-vqqq.onrender.com/api/postscategories';
 
     const body = JSON.stringify({ title });
 
@@ -66,7 +66,7 @@ export default function PostCategoriesPage() {
 
   const handleEdit = async (id: string) => {
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/postscategories/${id}`);
+      const res = await fetch(`https://deploy-nodejs-vqqq.onrender.com/api/postscategories/${id}`);
       const data = await res.json();
       setTitle(data.title);
       setEditingId(data._id);
@@ -78,7 +78,7 @@ export default function PostCategoriesPage() {
 
   const toggleVisibility = async (id: string, currentHidden: boolean = false) => {
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/postscategories/${id}`, {
+      const res = await fetch(`https://deploy-nodejs-vqqq.onrender.com/api/postscategories/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ hidden: !currentHidden }),

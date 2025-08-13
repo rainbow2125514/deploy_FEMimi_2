@@ -77,7 +77,7 @@
 
     // Lấy danh sách user từ backend
     useEffect(() => {
-      fetch("https://deploy-nodejs-4u6l.onrender.com/users") // Sửa đúng port backend
+      fetch("https://deploy-nodejs-vqqq.onrender.com/users") // Sửa đúng port backend
         .then(res => res.json())
         .then(data => {
           // Nếu user từ backend không có các trường checked/status/dob/username thì cần xử lý thêm
@@ -102,7 +102,7 @@
   const handleToggleVisibility = async (idx: number) => {
     const user = users[idx];
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/users/${user._id}/toggle-visibility`, {
+      const res = await fetch(`https://deploy-nodejs-vqqq.onrender.com/users/${user._id}/toggle-visibility`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -122,7 +122,7 @@
 
   const handleToggleRole = async (userId: string, currentRole: string) => {
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/users/${userId}/role`, {
+      const res = await fetch(`https://deploy-nodejs-vqqq.onrender.com/users/${userId}/role`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

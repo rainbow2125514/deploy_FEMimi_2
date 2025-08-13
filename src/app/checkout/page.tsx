@@ -75,7 +75,7 @@ const CheckoutPage: React.FC = () => {
 
   useEffect(() => {
     if (productId) {
-      fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${productId}`)
+      fetch(`https://deploy-nodejs-vqqq.onrender.com/products/${productId}`)
         .then(res => res.json())
         .then(data => {
           setLuckyProduct({
@@ -125,7 +125,7 @@ const CheckoutPage: React.FC = () => {
         setUserInfo(parsedUser);
         setFullName(parsedUser.username || "");
 
-        fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/username/${parsedUser.username}`, {
+        fetch(`https://deploy-nodejs-vqqq.onrender.com/api/usersProfile/username/${parsedUser.username}`, {
           headers: { 'Authorization': `Bearer ${token}` },
         })
           .then((res) => res.json())
@@ -276,7 +276,7 @@ const CheckoutPage: React.FC = () => {
     // LẤY TOKEN TỪ LOCALSTORAGE
     const token = localStorage.getItem("token");
     // Gửi API POST lên backend (có gửi token)
-    const res = await axios.post("https://deploy-nodejs-4u6l.onrender.com/orders", {
+    const res = await axios.post("https://deploy-nodejs-vqqq.onrender.com/orders", {
       items,
       shippingInfo,
       totalPrice: totalWithShipping,
@@ -318,7 +318,7 @@ const CheckoutPage: React.FC = () => {
   }));
 
     try {
-      const res = await axios.post("https://deploy-nodejs-4u6l.onrender.com/payment/momo", {
+      const res = await axios.post("https://deploy-nodejs-vqqq.onrender.com/payment/momo", {
         amount: totalWithShipping,
         orderId, // Dùng biến này!
         orderInfo: "Thanh toán đơn hàng MimiBear",
@@ -360,7 +360,7 @@ const CheckoutPage: React.FC = () => {
     }));
 
     try {
-      const res = await axios.post("https://deploy-nodejs-4u6l.onrender.com/payment/vnpay/create_payment", {
+      const res = await axios.post("https://deploy-nodejs-vqqq.onrender.com/payment/vnpay/create_payment", {
         amount: totalWithShipping,
         orderId,
         orderInfo: "Thanh toán đơn hàng MimiBear qua VNPAY",
@@ -381,7 +381,7 @@ const CheckoutPage: React.FC = () => {
   ////dòng này sẽ được gọi khi người dùng chọn thanh toán VNPAY
   const handleVNPayPayment = async () => {
     try {
-      const res = await axios.post("https://deploy-nodejs-4u6l.onrender.com/payment/create_payment_url", {
+      const res = await axios.post("https://deploy-nodejs-vqqq.onrender.com/payment/create_payment_url", {
         amount: 100000, // ❗Thay bằng tổng đơn hàng nếu cần
         bankCode: "NCB",
         orderDescription: "Thanh toán đơn hàng tại shop",

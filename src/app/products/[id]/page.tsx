@@ -42,7 +42,7 @@ const relatedProducts = allProducts.filter((p) => {
           <Gallery
             images={
               Array.isArray(product.images)
-                ? product.images.map((img) => `https://deploy-nodejs-4u6l.onrender.com/images/${img}`)
+                ? product.images.map((img) => `https://deploy-nodejs-vqqq.onrender.com/images/${img}`)
                 : []
             }
           />
