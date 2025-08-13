@@ -37,7 +37,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ productId }) => {
     const fetchReviews = () => {
       if (isFirstLoad.current) setLoading(true);
 
-      fetch('http://localhost:3000/reviews?productId=' + productId, {
+      fetch('https://deploy-nodejs-4u6l.onrender.com/reviews?productId=' + productId, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -106,7 +106,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ productId }) => {
           <div id="review-list">
             {reviewsToShow.length === 0 &&
               <div style={{ margin: "auto", textAlign: "center" }}>
-                <img src="http://localhost:3000/images/binhluan.jpg" alt="" width={400} />
+                <img src="https://deploy-nodejs-4u6l.onrender.com/images/binhluan.jpg" alt="" width={400} />
                 <p>Chưa có đánh giá nào.</p>
               </div>}
             {reviewsToShow.map((r, i) => (

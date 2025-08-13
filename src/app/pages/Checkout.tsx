@@ -9,7 +9,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (productId) {
-      fetch(`http://localhost:3000/products/${productId}`)
+      fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${productId}`)
         .then(res => res.json())
         .then(data => setProduct({ ...data, price: 0, quantity: 1 }));
     }

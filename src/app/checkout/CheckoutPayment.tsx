@@ -47,7 +47,7 @@ const CheckoutPayment: React.FC<Props> = ({
       <label>Thanh toán khi giao hàng</label>
       <div className="cod">
         <img
-          src="http://localhost:3000/images/icon-tien.png"
+          src="https://deploy-nodejs-4u6l.onrender.com/images/icon-tien.png"
           alt="cod"
           style={{
             filter:
@@ -66,7 +66,7 @@ const CheckoutPayment: React.FC<Props> = ({
       />
       <label>Thanh toán qua VnPay</label>
       <div className="cod">
-        <img src="http://localhost:3000/images/vnpay.png" alt="VnPay" style={{ width: 85 }} />
+        <img src="https://deploy-nodejs-4u6l.onrender.com/images/vnpay.png" alt="VnPay" style={{ width: 85 }} />
       </div>
     </div>
     <div className="payment-method" onClick={() => handlePaymentChange("momo")}>
@@ -79,7 +79,7 @@ const CheckoutPayment: React.FC<Props> = ({
       <label>Thanh toán qua Momo</label>
       <div className="cod">
         <img
-          src="http://localhost:3000/images/momo.png"
+          src="https://deploy-nodejs-4u6l.onrender.com/images/momo.png"
           alt="Momo"
           style={{ width: 35, height: 35 }}
         />

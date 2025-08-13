@@ -14,13 +14,13 @@
         setMounted(true);
     }, []);
 
-    const images = ["http://localhost:3000/images/banner1.jpg", "http://localhost:3000/images/banner2.jpg"];
+    const images = ["https://deploy-nodejs-4u6l.onrender.com/images/banner1.jpg", "https://deploy-nodejs-4u6l.onrender.com/images/banner2.jpg"];
 
     const features = [
-        { icon: "http://localhost:3000/images/icon-menu2.png", label: "GIAO HÀNG SIÊU TỐC" },
-        { icon: "http://localhost:3000/images/icon-menu1.png", label: "BỌC HỘP QUÀ XINH" },
-        { icon: "http://localhost:3000/images/icon-menu3.png", label: "TẶNG THIỆP Ý NGHĨA" },
-        { icon: "http://localhost:3000/images/icon-menu5.png", label: "NÉN NHỜ GẤU BÔNG" },
+        { icon: "https://deploy-nodejs-4u6l.onrender.com/images/icon-menu2.png", label: "GIAO HÀNG SIÊU TỐC" },
+        { icon: "https://deploy-nodejs-4u6l.onrender.com/images/icon-menu1.png", label: "BỌC HỘP QUÀ XINH" },
+        { icon: "https://deploy-nodejs-4u6l.onrender.com/images/icon-menu3.png", label: "TẶNG THIỆP Ý NGHĨA" },
+        { icon: "https://deploy-nodejs-4u6l.onrender.com/images/icon-menu5.png", label: "NÉN NHỜ GẤU BÔNG" },
     ];
 
     return (

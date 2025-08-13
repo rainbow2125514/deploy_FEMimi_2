@@ -114,10 +114,10 @@ export default function ProductSelectModal(props: ProductSelectModalProps) {
     }, [filteredProducts, page, pageSize]);
 
     const getImageUrl = (image: string) => {
-        if (!image) return "http://localhost:3000/images/no-image.png";
+        if (!image) return "https://deploy-nodejs-4u6l.onrender.com/images/no-image.png";
         if (/^https?:\/\//.test(image)) return image;
         const fileName = image.split("/").pop();
-        return `http://localhost:3000/images/${fileName}`;
+        return `https://deploy-nodejs-4u6l.onrender.com/images/${fileName}`;
     };
 
     const priceFilters: { text: string; value: PriceFilterType }[] = [
@@ -147,7 +147,7 @@ export default function ProductSelectModal(props: ProductSelectModalProps) {
                         src={getImageUrl(record.image)}
                         alt={record.name}
                         className={styles["psm-product-img"]}
-                        onError={(e) => { (e.target as HTMLImageElement).src = "http://localhost:3000/images/no-image.png"; }}
+                        onError={(e) => { (e.target as HTMLImageElement).src = "https://deploy-nodejs-4u6l.onrender.com/images/no-image.png"; }}
                     />
                     <div>
                         <div className={styles["psm-product-name"]}>{record.name}</div>

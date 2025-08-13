@@ -69,7 +69,7 @@ export default function ProductManagement() {
   const fetchProducts = async () => {
     try {
       // SỬA DÒNG NÀY: thêm ?all=true để lấy cả sản phẩm Ẩn
-      const res = await fetch("http://localhost:3000/products?all=true");
+      const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/products?all=true");
       const data = await res.json();
       console.log("Raw data from API:", data);
 
@@ -84,7 +84,7 @@ export default function ProductManagement() {
           ? prod.variants[0].quantity
           : prod.quantity || 0, // lấy từ sản phẩm chính nếu không có variant
         image: prod.images && prod.images.length > 0
-          ? `http://localhost:3000/images/${prod.images[0]}`
+          ? `https://deploy-nodejs-4u6l.onrender.com/images/${prod.images[0]}`
           : "",
         images: prod.images,
         desc: prod.description,
@@ -113,7 +113,7 @@ export default function ProductManagement() {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch("http://localhost:3000/categories");
+        const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/categories");
         const data = await res.json();
         setCategories(data);
       } catch (error) {
@@ -165,7 +165,7 @@ export default function ProductManagement() {
     setMainImageFile(null); // reset file khi mở modal sửa
     setMainImagePreview(
       p.images && p.images.length > 0
-        ? (p.images[0].startsWith("http") ? p.images[0] : `http://localhost:3000/images/${p.images[0]}`)
+        ? (p.images[0].startsWith("http") ? p.images[0] : `https://deploy-nodejs-4u6l.onrender.com/images/${p.images[0]}`)
         : ""
     );
     setForm({
@@ -181,7 +181,7 @@ export default function ProductManagement() {
     });
     setEditThumbnails(
       p.images?.slice(1).map((img: string) => ({
-        url: img.startsWith("http") ? img : `http://localhost:3000/images/${img}`,
+        url: img.startsWith("http") ? img : `https://deploy-nodejs-4u6l.onrender.com/images/${img}`,
         name: img,
         file: null,
         isNew: false,
@@ -309,7 +309,7 @@ useEffect(() => {
     formData.append("oldThumbnails", JSON.stringify(oldThumbs));
 
     // Gửi request PATCH
-    const res = await fetch(`http://localhost:3000/products/${form.id}`, {
+    const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${form.id}`, {
       method: "PATCH",
       body: formData,
       headers: {
@@ -329,7 +329,7 @@ useEffect(() => {
   const toggleProductStatus = async (id: string, currentStatus: string) => {
     try {
       const newStatus = currentStatus === "Ẩn" ? "Còn hàng" : "Ẩn";
-      const res = await fetch(`http://localhost:3000/products/${id}`, {
+      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -758,7 +758,7 @@ useEffect(() => {
                               }
                             });
 
-                            const res = await fetch("http://localhost:3000/products", {
+                            const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/products", {
                               method: "POST",
                               body: formData,
                               headers: {
@@ -1091,7 +1091,7 @@ useEffect(() => {
             <b>Ảnh chính:</b><br />
             {detailProduct.images && detailProduct.images.length > 0 && (
               <img
-                src={detailProduct.images[0].startsWith("http") ? detailProduct.images[0] : `http://localhost:3000/images/${detailProduct.images[0]}`}
+                src={detailProduct.images[0].startsWith("http") ? detailProduct.images[0] : `https://deploy-nodejs-4u6l.onrender.com/images/${detailProduct.images[0]}`}
                 alt="Ảnh chính"
                 width={100}
                 style={{ marginRight: 8, marginBottom: 8, border: "2px solid #d16ba5" }}
@@ -1104,7 +1104,7 @@ useEffect(() => {
               detailProduct.images.slice(1).map((img, idx) => (
                 <img
                   key={idx}
-                  src={img.startsWith("http") ? img : `http://localhost:3000/images/${img}`}
+                  src={img.startsWith("http") ? img : `https://deploy-nodejs-4u6l.onrender.com/images/${img}`}
                   alt={`thumb-${idx}`}
                   width={60}
                   style={{ marginRight: 8, marginBottom: 8, border: "1px solid #ccc" }}

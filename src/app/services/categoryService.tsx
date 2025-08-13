@@ -1,6 +1,6 @@
 import { Category } from "../types/categoryD";
 
-const API_URL = "http://localhost:3000/categories";
+const API_URL = "https://deploy-nodejs-4u6l.onrender.com/categories";
 
 // Lấy toàn bộ danh mục (R)
 export const getCategories = async (): Promise<Category[]> => {

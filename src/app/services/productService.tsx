@@ -6,7 +6,7 @@ import { Category } from "../types/categoryD";
  * Lấy danh sách sản phẩm
  */
 export const getProducts = async (): Promise<Products[]> => {
-  const res = await fetch("http://localhost:3000/products");
+  const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/products");
   if (!res.ok) throw new Error("Lỗi khi tải sản phẩm");
   const data = await res.json();
 
@@ -36,7 +36,7 @@ export const getProducts = async (): Promise<Products[]> => {
 //  
 export async function getDetail(id: string): Promise<Products | null> {
   try {
-    const res = await fetch(`http://localhost:3000/products/${id}`, {
+    const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) return null;
@@ -63,7 +63,7 @@ export async function getDetail(id: string): Promise<Products | null> {
 
 // Sản phẩm mới
 export const getProductsNew = async (): Promise<Products[]> => {
-  const res = await fetch("http://localhost:3000/products");
+  const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/products");
   if (!res.ok) throw new Error("Lỗi khi tải sản phẩm mới");
 
   const data = await res.json();
@@ -86,7 +86,7 @@ export const getProductsNew = async (): Promise<Products[]> => {
 
 // Sản phẩm hot
 export const getProductsHot = async (): Promise<Products[]> => {
-  const res = await fetch("http://localhost:3000/products");
+  const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/products");
   if (!res.ok) throw new Error("Lỗi khi tải sản phẩm hot");
 
   const data = await res.json();
@@ -109,13 +109,13 @@ export const getProductsHot = async (): Promise<Products[]> => {
 
 // Thêm hàm mới
 export const getProductsByCategory = async (categoryId: string): Promise<Products[]> => {
-  const res = await fetch(`http://localhost:3000/products?idcate=${categoryId}`);
+  const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products?idcate=${categoryId}`);
   if (!res.ok) throw new Error("Lỗi khi tải sản phẩm theo danh mục");
   return await res.json();
 };
 //lấy sản phẩm theo danh mục con
 export const getProductsBySubCategory = async (subCategoryId: string): Promise<Products[]> => {
-  const res = await fetch(`http://localhost:3000/products?idsubcate=${subCategoryId}`);
+  const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products?idsubcate=${subCategoryId}`);
   if (!res.ok) throw new Error("Lỗi khi tải sản phẩm theo danh mục con");
   return await res.json();
 };

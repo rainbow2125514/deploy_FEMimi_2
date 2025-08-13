@@ -62,7 +62,7 @@ const UserOrders: React.FC<UserOrdersProps> = ({ username }) => {
 
   const fetchOrders = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/usersProfile/by-username-ordername/${username}`);
+      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/by-username-ordername/${username}`);
       if (!res.ok) throw new Error('Không lấy được đơn hàng');
       const data = await res.json();
       setOrders(data);
@@ -106,7 +106,7 @@ const UserOrders: React.FC<UserOrdersProps> = ({ username }) => {
 
   const handleUpdateOrder = async (orderId: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/usersProfile/update-status/${orderId}`, {
+      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/update-status/${orderId}`, {
         method: 'PUT',
       });
       if (!res.ok) throw new Error('Không thể cập nhật trạng thái đơn hàng');
@@ -197,7 +197,7 @@ const UserOrders: React.FC<UserOrdersProps> = ({ username }) => {
                           src={
                             product.image.startsWith('http')
                               ? product.image
-                              : `http://localhost:3000/images/${product.image}`
+                              : `https://deploy-nodejs-4u6l.onrender.com/images/${product.image}`
                           }
                           alt={product.productName}
                         />

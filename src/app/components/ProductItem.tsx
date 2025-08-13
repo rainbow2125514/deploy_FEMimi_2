@@ -84,7 +84,7 @@ export default function ProductItem({ product }: { product: Products }) {
   // Load trạng thái yêu thích
 useEffect(() => {
   if (isLoggedIn && userId && token) {
-    fetch(`http://localhost:3000/favorites?userId=${userId}`, {
+    fetch(`https://deploy-nodejs-4u6l.onrender.com/favorites?userId=${userId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.ok ? res.json() : [])
@@ -100,7 +100,7 @@ useEffect(() => {
 
   // thêm sản phẩm vào yêu thích 
 const addFavorite = async (productId: string, userId: string, token: string) => {
-  await fetch("http://localhost:3000/favorites", {
+  await fetch("https://deploy-nodejs-4u6l.onrender.com/favorites", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const addFavorite = async (productId: string, userId: string, token: string) => 
 
 // xóa sản phẩm yêu thích 
 const removeFavorite = async (productId: string, userId: string, token: string) => {
-  await fetch(`http://localhost:3000/favorites/${productId}?userId=${userId}`, {
+  await fetch(`https://deploy-nodejs-4u6l.onrender.com/favorites/${productId}?userId=${userId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -172,14 +172,14 @@ const toggleFavorite = async () => {
 
         <a href={`/products/${product._id}`}>
           <div className={styles.image_link}>
-            <img src={`http://localhost:3000/images/${product.images[0]}`} alt={product.name} />
+            <img src={`https://deploy-nodejs-4u6l.onrender.com/images/${product.images[0]}`} alt={product.name} />
             <img
-              src={`http://localhost:3000/images/${product.images[1]}`}
+              src={`https://deploy-nodejs-4u6l.onrender.com/images/${product.images[1]}`}
               className={styles.image_hover}
               alt={`${product.name} Hover`}
             />
             <img
-              src="http://localhost:3000/images/logoXP.png"
+              src="https://deploy-nodejs-4u6l.onrender.com/images/logoXP.png"
               className={styles.logo_left}
               alt="Logo"
             />
@@ -189,13 +189,13 @@ const toggleFavorite = async () => {
 
         <button className={styles.buy_now_btn} onClick={handleBuyNow}>
           <img
-            src="http://localhost:3000/images/button.png"
+            src="https://deploy-nodejs-4u6l.onrender.com/images/button.png"
             className={styles.bear_left}
             alt="Bear Left"
           />
           MUA NGAY
           <img
-            src="http://localhost:3000/images/button.png"
+            src="https://deploy-nodejs-4u6l.onrender.com/images/button.png"
             className={styles.bear_right}
             alt="Bear Right"
           />
