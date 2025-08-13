@@ -7,7 +7,7 @@ export default function Footer() {
       <div className={styles["footer-container"]}>
         {/* Cột 1 */}
         <div className={styles["footer-col"]}>
-          <img src="https://deploy-nodejs-4u6l.onrender.com/images/logoXP.png" alt="MiMiBear Logo" className={styles["footer-logo"]} />
+          <img src="http://localhost:3000/images/logoXP.png" alt="MiMiBear Logo" className={styles["footer-logo"]} />
           <p>
             MiMiBear - Cửa hàng gấu bông chất lượng, quà tặng yêu thương dành cho mọi lứa tuổi. Khám phá bộ sưu tập thú nhồi bông độc đáo, mềm mại và an toàn, hoàn hảo để làm quà sinh nhật, kỷ niệm, hay gửi gắm tình cảm.
           </p>
@@ -25,12 +25,12 @@ export default function Footer() {
           <p>OPEN DAILY: 8H30 - 23H00</p>
           <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
           <div className={styles["social-icons"]}>
-            <a href="#"><img src="https://deploy-nodejs-4u6l.onrender.com/images/iconfb.png" alt="Facebook" /></a>
-            <a href="#"><img src="https://deploy-nodejs-4u6l.onrender.com/images/iconzalo.png" alt="Zalo" /></a>
-            <a href="#"><img src="https://deploy-nodejs-4u6l.onrender.com/images/icontt.png" alt="TikTok" /></a>
-            <a href="#"><img src="https://deploy-nodejs-4u6l.onrender.com/images/iconyt.png" alt="YouTube" /></a>
+            <a href="#"><img src="http://localhost:3000/images/iconfb.png" alt="Facebook" /></a>
+            <a href="#"><img src="http://localhost:3000/images/iconzalo.png" alt="Zalo" /></a>
+            <a href="#"><img src="http://localhost:3000/images/icontt.png" alt="TikTok" /></a>
+            <a href="#"><img src="http://localhost:3000/images/iconyt.png" alt="YouTube" /></a>
           </div>
-          <a href="#"><img src="https://deploy-nodejs-4u6l.onrender.com/images/bct.webp" alt="Đã thông báo Bộ Công Thương" className={styles["bct-logo"]} /></a>
+          <a href="#"><img src="http://localhost:3000/images/bct.webp" alt="Đã thông báo Bộ Công Thương" className={styles["bct-logo"]} /></a>
         </div>
 
         {/* Cột 3 */}
@@ -49,7 +49,7 @@ export default function Footer() {
           <p>Email: MiMiBear.cskh@gmail.com</p>
           <h3>PHƯƠNG THỨC THANH TOÁN</h3>
           <div className={styles["payment-icons"]}>
-            <img src="https://deploy-nodejs-4u6l.onrender.com/images/thanhtoan.png" alt="Thanh toán" />
+            <img src="http://localhost:3000/images/thanhtoan.png" alt="Thanh toán" />
           </div>
         </div>
       </div>

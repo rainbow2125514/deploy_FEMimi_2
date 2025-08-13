@@ -36,7 +36,7 @@ const ReviewForm = ({ productId }: { productId: string }) => {
     }
 
     try {
-      const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/reviews', {
+      const res = await fetch('http://localhost:3000/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

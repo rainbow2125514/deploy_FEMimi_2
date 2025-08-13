@@ -35,7 +35,7 @@ const ProductInfo = ({ product }: { product: Products }) => {
   useEffect(() => {
     if (isLoggedIn && userId && token) {
       // Kiểm tra từ backend
-      fetch(`https://deploy-nodejs-4u6l.onrender.com/favorites?userId=${userId}`, {
+      fetch(`http://localhost:3000/favorites?userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => (res.ok ? res.json() : []))

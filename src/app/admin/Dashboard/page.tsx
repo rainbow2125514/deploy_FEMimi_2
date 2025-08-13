@@ -57,7 +57,7 @@ export default function ReportManagement() {
   const [ordersCountByMonth, setOrdersCountByMonth] = useState<number[]>([]);
 
 useEffect(() => {
-  fetch("https://deploy-nodejs-4u6l.onrender.com/orders")
+  fetch("http://localhost:3000/orders")
     .then(res => res.json())
     .then(data => {
       setOrders(data);
@@ -107,7 +107,7 @@ const lineOptions = {
 
 
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/api/statistics/revenue")
+    fetch("http://localhost:3000/api/statistics/revenue")
       .then(res => res.json())
       .then(data => {
         // Lấy tháng hiện tại
@@ -125,16 +125,16 @@ const lineOptions = {
   }, []);
 
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/products")
+    fetch("http://localhost:3000/products")
       .then(res => res.json())
       .then(data => {
         setProducts(data);
         setOutOfStockProducts(data.filter((p: any) => p.quantity === 0));
       });
-    fetch("https://deploy-nodejs-4u6l.onrender.com/users")
+    fetch("http://localhost:3000/users")
       .then(res => res.json())
       .then(setUsers);
-    fetch("https://deploy-nodejs-4u6l.onrender.com/orders")
+    fetch("http://localhost:3000/orders")
       .then(res => res.json())
       .then(data => {
         setOrders(data);
@@ -173,7 +173,7 @@ const lineOptions = {
   }, [users]);
 
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/orderdetails")
+    fetch("http://localhost:3000/orderdetails")
       .then(res => res.json())
       .then(data => {
         console.log("orderdetails api data:", data);

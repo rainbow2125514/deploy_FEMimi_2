@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/categories");
+        const res = await fetch("http://localhost:3000/categories");
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         setCategories(data);
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="vi">
       <head>
         <title>MimiBear Shop</title>
-        <link rel="icon" href="https://deploy-nodejs-4u6l.onrender.com/images/logoXP.png" />
+        <link rel="icon" href="http://localhost:3000/images/logoXP.png" />
       </head>
       <body>
         <Providers>
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             title="Vòng quay may mắn"
           >
             <img
-              src="https://deploy-nodejs-4u6l.onrender.com/images/vqmm.png"
+              src="http://localhost:3000/images/vqmm.png"
               alt="Vòng quay may mắn"
               style={{ width: 56, height: 56 }}
             />

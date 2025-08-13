@@ -90,13 +90,13 @@ export default function OrderManagement() {
 
   // Lấy danh sách đơn hàng từ backend
   useEffect(() => {
-    axios.get("https://deploy-nodejs-4u6l.onrender.com/orders")
+    axios.get("http://localhost:3000/orders")
       .then(res => setOrders(res.data))
       .catch(() => setOrders([]));
   }, []);
   useEffect(() => {
   const interval = setInterval(() => {
-    axios.get("https://deploy-nodejs-4u6l.onrender.com/orders")
+    axios.get("http://localhost:3000/orders")
       .then(res => setOrders(res.data))
       .catch(() => setOrders([]));
   }, 3000); // mỗi 3 giây gọi lại
@@ -142,7 +142,7 @@ const handleStatusChange = (id: string, status: string) => {
   }
 };
 const updateOrderStatus = (id: string, status: string) => {
-  axios.put(`https://deploy-nodejs-4u6l.onrender.com/orders/${id}`, { orderStatus: status })
+  axios.put(`http://localhost:3000/orders/${id}`, { orderStatus: status })
     .then(res => {
       setOrders(orders => orders.map(order =>
         order._id === id ? { ...order, orderStatus: status as Order["orderStatus"] } : order

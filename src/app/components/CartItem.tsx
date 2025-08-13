@@ -36,7 +36,7 @@ export default function CartItem({ item }: CartItemProps) {
       <td className={styles.product}>
         <a href={`/products/${product._id}`} style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none', color: 'inherit', position: 'relative' }}>
           <div style={{ position: 'relative', display: 'inline-block' }}>
-            <img src={`https://deploy-nodejs-4u6l.onrender.com/images/${product.images[0]}`} alt={product.name} className={styles.productImg} />
+            <img src={`http://localhost:3000/images/${product.images[0]}`} alt={product.name} className={styles.productImg} />
           </div>
           <p>{product.name}</p>
         </a>

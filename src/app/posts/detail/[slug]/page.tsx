@@ -18,20 +18,20 @@ function adjustImageSrc(html: string): string {
   return html.replace(
     /<img\s+[^>]*src="(?!http)([^"]+)"[^>]*>/g,
     (match, src) => {
-      const fullSrc = `https://deploy-nodejs-4u6l.onrender.com${src.startsWith('/') ? '' : '/'}${src}`;
+      const fullSrc = `http://localhost:3000${src.startsWith('/') ? '' : '/'}${src}`;
       return match.replace(src, fullSrc);
     }
   );
 }
 
 async function getPost(slug: string): Promise<Post | null> {
-  const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/posts/slug/${slug}`, { cache: 'no-store' });
+  const res = await fetch(`http://localhost:3000/api/posts/slug/${slug}`, { cache: 'no-store' });
   if (!res.ok) return null;
   return res.json();
 }
 
 async function getRecentPosts(): Promise<Post[]> {
-  const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/api/posts', { cache: 'no-store' });
+  const res = await fetch('http://localhost:3000/api/posts', { cache: 'no-store' });
   const data = await res.json();
   return data.items
     .filter((post: Post) => !post.hidden) // ✅ lọc bài viết không bị ẩn

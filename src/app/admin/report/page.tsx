@@ -69,7 +69,7 @@ export default function Dashboard() {
 
   // Lấy dữ liệu thống kê tổng hợp
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/api/statistics/summary")
+    fetch("http://localhost:3000/api/statistics/summary")
       .then(res => res.json())
       .then(data => {
         console.log("summary data:", data); // Thêm dòng này để kiểm tra
@@ -79,7 +79,7 @@ export default function Dashboard() {
 
   // Lấy dữ liệu doanh thu từng tháng
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/api/statistics/revenue")
+    fetch("http://localhost:3000/api/statistics/revenue")
       .then(res => res.json())
       .then(data => {
         // Tạo mảng doanh thu 6 tháng, mặc định 0
@@ -96,7 +96,7 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/orders")
+    fetch("http://localhost:3000/orders")
       .then(res => res.json())
       .then(data => setOrders(data));
   }, []);
@@ -172,7 +172,7 @@ export default function Dashboard() {
   const [customers, setCustomers] = useState<Customer[]>(sampleCustomers);
 
   useEffect(() => {
-    fetch("https://deploy-nodejs-4u6l.onrender.com/users")
+    fetch("http://localhost:3000/users")
       .then(res => res.json())
       .then(data => setCustomers(data));
   }, []);

@@ -54,7 +54,7 @@ export default function PostManagement() {
 useEffect(() => {
   const token = localStorage.getItem("token"); // hoặc từ cookie nếu bạn dùng cookie
 
-  fetch("https://deploy-nodejs-4u6l.onrender.com/api/postscategories", {
+  fetch("http://localhost:3000/api/postscategories", {
     headers: {
       Authorization: `Bearer ${token || ""}`
     }
@@ -84,7 +84,7 @@ useEffect(() => {
   // Fetch posts
   const fetchPosts = () => {
     setLoading(true);
-    fetch("https://deploy-nodejs-4u6l.onrender.com/api/posts")
+    fetch("http://localhost:3000/api/posts")
       .then((res) => res.json())
       .then((data) => {
         let arr: Post[] = Array.isArray(data) ? data : data.items || [];
@@ -157,7 +157,7 @@ const handleToggleVisibility = async (id: string) => {
 
   const isVisible = typeof post.visible === 'boolean' ? post.visible : !post.hidden;
 
-  await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/posts/${id}`, {
+  await fetch(`http://localhost:3000/api/posts/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -179,7 +179,7 @@ const handleToggleVisibility = async (id: string) => {
   // Xác nhận xóa bài viết
     const confirmDeletePost = async () => {
     if (!postToDelete) return;
-    await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/posts/${postToDelete._id}`, {
+    await fetch(`http://localhost:3000/api/posts/${postToDelete._id}`, {
       method: "DELETE",
     });
     showMessage.success("Đã xóa bài viết");
@@ -245,13 +245,13 @@ const handleSubmit = async (e: React.FormEvent) => {
   });
 
   if (editingId) {
-    await fetch(`https://deploy-nodejs-4u6l.onrender.com/api/posts/${editingId}`, {
+    await fetch(`http://localhost:3000/api/posts/${editingId}`, {
       method: "PUT",
       body: formData,
     });
     showMessage.success("Cập nhật bài viết thành công");
   } else {
-    await fetch("https://deploy-nodejs-4u6l.onrender.com/api/posts", {
+    await fetch("http://localhost:3000/api/posts", {
       method: "POST",
       body: formData,
     });

@@ -736,6 +736,34 @@
   background: linear-gradient(90deg, #ffd6f4 0%, #ffe6fa 100%) !important;
 }
 
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: #ff5a5f;          /* Màu icon mũi tên */
+  background: #fff;        /* Nền nút */
+  border-radius: 50%;
+  width: 48px;             /* Kích thước nút */
+  height: 48px;
+  font-size: 30px;         /* Kích thước icon mũi tên */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff5a5f; /* Viền nút */
+  transition: color 0.2s, background 0.2s, border 0.2s;
+}
+
+:global(.swiper-button-next:hover),
+:global(.swiper-button-prev:hover) {
+  color: #fff;
+  background: #ff5a5f;
+  border-color: #ff5a5f;
+}
+
+:global(.swiper-button-next)::after,
+:global(.swiper-button-prev)::after {
+  font-size: 32px !important; /* Kích thước icon mũi tên, ghi đè Swiper mặc định */
+}
+
 
 
 /* Tablet trở lên (≥ 768px): 4 sản phẩm mỗi hàng */

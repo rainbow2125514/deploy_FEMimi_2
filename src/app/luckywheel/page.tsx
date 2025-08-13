@@ -1,4 +1,3 @@
-"use client";
 import LuckyWheel from "../components/LuckyWheel";
 
 export default function LuckyWheelPage() {

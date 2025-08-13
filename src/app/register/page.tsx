@@ -83,7 +83,7 @@ export default function Register() {
 
     try {
       // Thay đổi URL backend đúng với server của bạn
-      const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/users/register", {
+      const res = await fetch("http://localhost:3000/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -245,7 +245,7 @@ export default function Register() {
               className="google-btn"
               type="button"
               onClick={() =>
-                (window.location.href = "https://deploy-nodejs-4u6l.onrender.com/users/auth/google")
+                (window.location.href = "http://localhost:3000/users/auth/google")
               }
             >
               <img

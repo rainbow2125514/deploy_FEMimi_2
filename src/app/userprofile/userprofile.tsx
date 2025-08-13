@@ -312,7 +312,7 @@ useEffect(() => {
   }
 
   // Gọi API để luôn lấy user + profile mới nhất từ server
-  fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/username/${username}`, {
+  fetch(`http://localhost:3000/api/usersProfile/username/${username}`, {
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -584,7 +584,7 @@ const renderEditFormNormal = () => (
 
     const method = hasProfile ? 'PUT' : 'POST';
 
-    fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/${username}`, {
+    fetch(`http://localhost:3000/api/usersProfile/${username}`, {
       method,
       headers: {
         'Content-Type': 'application/json',
@@ -601,7 +601,7 @@ const renderEditFormNormal = () => (
       })
         .then(() => {
         // ✅ Gọi lại API để lấy user mới nhất từ server
-        return fetch(`https://deploy-nodejs-4u6l.onrender.com/api/usersProfile/username/${username}`, {
+        return fetch(`http://localhost:3000/api/usersProfile/username/${username}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -647,7 +647,7 @@ const renderEditFormNormal = () => (
       return;
     }
 
-    fetch(`https://deploy-nodejs-4u6l.onrender.com/users/change-password`, {
+    fetch(`http://localhost:3000/users/change-password`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

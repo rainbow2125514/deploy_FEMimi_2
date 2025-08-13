@@ -60,7 +60,7 @@ export default function ProductItemSlide({ product }: { product: Products }) {
 
   useEffect(() => {
     if (isLoggedIn && userId && token) {
-      fetch(`https://deploy-nodejs-4u6l.onrender.com/favorites?userId=${userId}`, {
+      fetch(`http://localhost:3000/favorites?userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => (res.ok ? res.json() : []))
@@ -75,7 +75,7 @@ export default function ProductItemSlide({ product }: { product: Products }) {
   }, [productId, isLoggedIn, userId, token]);
 
   const addFavorite = async (productId: string, userId: string, token: string) => {
-    await fetch("https://deploy-nodejs-4u6l.onrender.com/favorites", {
+    await fetch("http://localhost:3000/favorites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export default function ProductItemSlide({ product }: { product: Products }) {
   };
 
   const removeFavorite = async (productId: string, userId: string, token: string) => {
-    await fetch(`https://deploy-nodejs-4u6l.onrender.com/favorites/${productId}?userId=${userId}`, {
+    await fetch(`http://localhost:3000/favorites/${productId}?userId=${userId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -143,14 +143,14 @@ export default function ProductItemSlide({ product }: { product: Products }) {
 
         <a href={`/products/${product._id}`}>
           <div className={styles.mimi_image_link}>
-            <img src={`https://deploy-nodejs-4u6l.onrender.com/images/${product.images[0]}`} alt={product.name} />
+            <img src={`http://localhost:3000/images/${product.images[0]}`} alt={product.name} />
             <img
-              src={`https://deploy-nodejs-4u6l.onrender.com/images/${product.images[1]}`}
+              src={`http://localhost:3000/images/${product.images[1]}`}
               className={styles.mimi_image_hover}
               alt={`${product.name} Hover`}
             />
             <img
-              src="https://deploy-nodejs-4u6l.onrender.com/images/logoXP.png"
+              src="http://localhost:3000/images/logoXP.png"
               className={styles.mimi_logo_left}
               alt="Logo"
             />
@@ -160,13 +160,13 @@ export default function ProductItemSlide({ product }: { product: Products }) {
 
         <button className={styles.mimi_buy_now_btn} onClick={handleBuyNow}>
           <img
-            src="https://deploy-nodejs-4u6l.onrender.com/images/button.png"
+            src="http://localhost:3000/images/button.png"
             className={styles.mimi_bear_left}
             alt="Bear Left"
           />
           MUA NGAY
           <img
-            src="https://deploy-nodejs-4u6l.onrender.com/images/button.png"
+            src="http://localhost:3000/images/button.png"
             className={styles.mimi_bear_right}
             alt="Bear Right"
           />

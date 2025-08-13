@@ -31,7 +31,7 @@ export default function Login() {
     }
 
     try {
-      const res = await fetch("https://deploy-nodejs-4u6l.onrender.com/users/login", {
+      const res = await fetch("http://localhost:3000/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -138,7 +138,7 @@ export default function Login() {
             className="google-btn"
             type="button"
             onClick={() =>
-              (window.location.href = "https://deploy-nodejs-4u6l.onrender.com/users/auth/google")
+              (window.location.href = "http://localhost:3000/users/auth/google")
             }
           >
             <img

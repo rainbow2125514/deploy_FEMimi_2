@@ -1,6 +1,6 @@
 import { SubCategory } from "../types/categoryD";
 
-const API_URL = "https://deploy-nodejs-4u6l.onrender.com/subcategory";
+const API_URL = "http://localhost:3000/subcategory";
 
 // Thêm danh mục con mới (C)
 export const createSubcategory = async (data: Omit<SubCategory, "_id">): Promise<SubCategory> => {

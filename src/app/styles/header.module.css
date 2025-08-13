@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:900&family=Baloo+2:wght@700&family=Georgia:ital,wght@1,400&display=swap');
 
+:root {
+  --color-bg-gradient-from: #ffd6f4;
+  --color-bg-gradient-to: #ffe6fa;
+  --color-pink-main: #e87ebd;
+  --color-pink-hover: #b94490;
+  --color-pink-border: #f6c1e8;
+  --color-pink-shadow: #ffd2f8b8;
+  --color-pink-shadow-light: #ffd2f8b8;
+  --color-pink-shadow-submenu: #da84b64d;
+  --color-pink-submenu-bg: #fff0fa;
+  --color-pink-submenu-border: #ffd6f4;
+  --color-mobile-menu-bg: #fff;
+  --color-mobile-menu-shadow: #dab4d530;
+  --color-mobile-menu-border: #f3d2ed;
+  --color-mobile-menu-list-border: #f7e5f3;
+  --color-mobile-submenu-bg: #faf5fa;
+  --color-mobile-submenu-hover-bg: #fbd3f3;
+  --color-mobile-accent: #d968a7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo 2', cursive, sans-serif !important;
+  /* background: linear-gradient(90deg, #ffd6f4 0%, #ffe6fa 100%); */
+}
+
 .header {
   position: relative;
   width: 100%;

@@ -20,7 +20,7 @@ export default function BearStories() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/api/posts/by-category-slug/chuyen-nha-gau', {
+        const res = await fetch('http://localhost:3000/api/posts/by-category-slug/chuyen-nha-gau', {
           cache: 'no-store',
         });
 
@@ -61,7 +61,7 @@ export default function BearStories() {
           <div key={post._id} className={styles.bgsSlide}>
             <a href={`/posts/detail/${post.slug}`}>
               <img
-                src={`https://deploy-nodejs-4u6l.onrender.com/images/${post.img || 'default.jpg'}`}
+                src={`http://localhost:3000/images/${post.img || 'default.jpg'}`}
                 alt={post.title}
               />
             </a>

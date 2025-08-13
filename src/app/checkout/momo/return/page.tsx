@@ -21,7 +21,7 @@ const PaymentReturnPage: React.FC = () => {
     const checkOrderStatus = async () => {
       try {
         // Gọi backend để kiểm tra trạng thái đơn hàng
-        const res = await axios.get(`https://deploy-nodejs-4u6l.onrender.com/orders/status/${orderId}?resultCode=${resultCode}`);
+        const res = await axios.get(`http://localhost:3000/orders/status/${orderId}?resultCode=${resultCode}`);
         const { status } = res.data;
         if (status === "paid") {
           Swal.fire({

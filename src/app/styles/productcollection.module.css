@@ -13,6 +13,11 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+:global(.swiper),
+:global(.swiper-wrapper),
+:global(.swiper-slide) {
+  background-color: white !important;
+}
  
 .bangTruot {
     background-color: white !important;

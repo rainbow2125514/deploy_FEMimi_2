@@ -62,7 +62,7 @@ function ReviewDetailModal({ productId, onClose }: { productId: string; onClose:
     async function fetchDetails() {
       setLoading(true);
       try {
-        const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/reviews/admin?productId=${productId}`, {
+        const res = await fetch(`http://localhost:3000/reviews/admin?productId=${productId}`, {
           headers: {
             Authorization: "Bearer " + (localStorage.getItem("token") || ""),
           }
@@ -91,7 +91,7 @@ function ReviewDetailModal({ productId, onClose }: { productId: string; onClose:
 
   async function fetchProductName(productId: string): Promise<string> {
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/products/${productId}`);
+      const res = await fetch(`http://localhost:3000/products/${productId}`);
       if (!res.ok) return productId;
       const data = await res.json();
       return data.product?.name || productId;
@@ -102,7 +102,7 @@ function ReviewDetailModal({ productId, onClose }: { productId: string; onClose:
 
   const handleToggleVisibility = async (reviewId: string) => {
     try {
-      const res = await fetch(`https://deploy-nodejs-4u6l.onrender.com/reviews/${reviewId}/toggle-status`, {
+      const res = await fetch(`http://localhost:3000/reviews/${reviewId}/toggle-status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -212,7 +212,7 @@ export default function ReviewManagement() {
   // Hàm fetchReviews chỉ cập nhật khi có thay đổi thực sự (tránh "dựt")
   const fetchReviews = async () => {
     try {
-      const res = await fetch('https://deploy-nodejs-4u6l.onrender.com/reviews/admin/reviews-latest', {
+      const res = await fetch('http://localhost:3000/reviews/admin/reviews-latest', {
         headers: {
           Authorization: "Bearer " + (localStorage.getItem("token") || ""),
         }
